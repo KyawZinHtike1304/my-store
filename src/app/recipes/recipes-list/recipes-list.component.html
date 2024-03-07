@@ -1,0 +1,9 @@
+<!-- {{recipes$ | async | json}} -->
+
+<div class="row">
+    @for (item of (recipes$ | async); track $index) {
+    <div class="col-md-4">
+        <app-recipe-card [recipe]="item"></app-recipe-card>
+    </div>
+    }
+</div>

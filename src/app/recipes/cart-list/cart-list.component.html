@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col">
+        @if ((cart$ | async)?.length !=0) {
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of (cart$|async); track $index) {
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.title}}</td>
+                        <td>1</td>
+                        <td>20$</td>
+                    </tr>
+                }
+            </tbody>
+            
+        </table>
+        }
+        @else {
+            <h1 class="text-center">No Content Found</h1>
+        }
+    </div>
+</div>
